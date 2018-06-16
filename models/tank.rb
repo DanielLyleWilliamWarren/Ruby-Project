@@ -26,4 +26,11 @@ class Tank
       @id =   tank_data.first()['id'].to_i
     end
 
+    def self.all()
+      sql = "SELECT * FROM tanks"
+      tanks = SqlRunner.run( sql )
+      result = tanks.map { |tank| Tank.new( tank ) }
+      return result
+    end
+
 end
