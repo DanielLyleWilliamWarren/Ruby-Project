@@ -10,4 +10,20 @@ class Tank
     @country_of_origin = options['country_of_origin']
   end
 
-  
+  def save()
+      sql = "INSERT INTO tanks
+      (
+        name,
+        country_of_origin
+      )
+      VALUES
+      (
+        $1, $2
+      )
+      RETURNING *"
+      values = [@name, @country_of_origin]
+      tank_data = SqlRunner.run(sql, values)
+      @id =   tank_data.first()['id'].to_i
+    end
+
+end
