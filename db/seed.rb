@@ -3,6 +3,10 @@ require_relative('../models/tank.rb')
 require_relative('../models/rental.rb')
 require_relative('../models/customer.rb')
 
+Rental.delete_all()
+Tank.delete_all()
+Customer.delete_all()
+
 tank1 = Tank.new({
   "name" => "Tiger I",
   "country_of_origin" => "Germany"

@@ -33,4 +33,9 @@ class Tank
       return result
     end
 
+    def self.delete_all()
+      sql = "DELETE from tanks"
+      SqlRunner.run(sql)
+    end
+
 end

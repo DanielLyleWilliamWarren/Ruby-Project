@@ -33,4 +33,9 @@ class Rental
     return result
   end
 
+  def self.delete_all()
+    sql = "DELETE from rentals"
+    SqlRunner.run(sql)
+  end
+
 end
