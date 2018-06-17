@@ -36,4 +36,18 @@ class Customer
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE customer
+    SET
+    (
+    name
+    ) =
+    (
+    $1
+    )
+    WHERE id = $2"
+    values = [@name]
+    SqlRunner.run( sql, values )
+  end
+
 end

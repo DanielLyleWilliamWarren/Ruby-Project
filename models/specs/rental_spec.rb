@@ -16,7 +16,7 @@ result = @rental.tank_id()
 assert_equal("tank_id".to_i, result)
 end
 
-def test_country_of_origin
+def test_customer_id
 result = @rental.customer_id()
 assert_equal("customer_id".to_i, result)
 end
