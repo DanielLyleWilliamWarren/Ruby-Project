@@ -13,15 +13,25 @@ get('/tanks') do
 end
 
 #NEW
-get ('/tanks/new') do
+get ('/new-entry/new') do
   @tanks = Tank.all()
   erb( :new )
 end
 
-#CREATE
+get ('/new-entry/new') do
+  @customer = Customer.all()
+  erb( :new )
+end
 
+#CREATE
 post ('/tanks') do
   @tank = Tank.new(params)
   @tank.save()
+  erb(  :create  )
+end
+
+post ('/customers') do
+  @customer = Customer.new(params)
+  @customer.save()
   erb(  :create  )
 end
