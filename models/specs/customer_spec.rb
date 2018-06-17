@@ -4,7 +4,7 @@ require_relative("../customer.rb")
 class TestCustomer < MiniTest::Test
 
   def setup
-    options = { "name" => "Georgy Zhukov"}
+    options = {"name" => "Georgy Zhukov"}
 
     @customer = Customer.new(options)
 
