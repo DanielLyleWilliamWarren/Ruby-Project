@@ -2,26 +2,28 @@ require_relative('../db/sql_runner')
 
 class Tank
 
-  attr_reader :name, :country_of_origin, :id
+  attr_reader :name, :country_of_origin, :id, :price
 
   def initialize( options )
     @id = options['id'].to_i
     @name = options['name']
     @country_of_origin = options['country_of_origin']
+    @price = options['price'].to_i
   end
 
   def save()
       sql = "INSERT INTO tanks
       (
         name,
-        country_of_origin
+        country_of_origin,
+        price
       )
       VALUES
       (
-        $1, $2
+        $1, $2, $3
       )
       RETURNING *"
-      values = [@name, @country_of_origin]
+      values = [@name, @country_of_origin, @price]
       tank_data = SqlRunner.run(sql, values)
       @id =   tank_data.first()['id'].to_i
     end
@@ -46,10 +48,10 @@ class Tank
       country_of_origin
       ) =
       (
-      $1, $2
+      $1, $2, $3
       )
-      WHERE id = $3"
-      values = [@name, @country_of_origin]
+      WHERE id = $4"
+      values = [@name, @country_of_origin, @price]
       SqlRunner.run( sql, values )
     end
 

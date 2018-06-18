@@ -9,17 +9,20 @@ Customer.delete_all()
 
 tank1 = Tank.new({
   "name" => "Tiger I",
-  "country_of_origin" => "Germany"
+  "country_of_origin" => "Germany",
+  "price" => "1200"
   })
 
 tank2 = Tank.new({
   "name" => "IS",
-  "country_of_origin" => "USSR"
+  "country_of_origin" => "USSR",
+  "price" => "1000"
   })
 
 tank3 = Tank.new({
   "name" => "T29",
-  "country_of_origin" => "USA"
+  "country_of_origin" => "USA",
+  "price" => "1000"
   })
 tank1.save()
 tank2.save()
