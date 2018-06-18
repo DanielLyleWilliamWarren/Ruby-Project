@@ -53,5 +53,20 @@ class Tank
       SqlRunner.run( sql, values )
     end
 
+    def customers()
+      sql = "SELECT customers.*
+      FROM customers
+      INNER JOIN rentals
+      ON rentals.customer_id = customers.id
+      WHERE tank_id = $1"
+      values = [@id]
+      customer_data = SqlRunner.run(sql, values)
+      return Customer.map_items(customer_data)
+    end
+
+    def self.map_items(tank_data)
+      result = tank_data.map { |tank| Tank.new( tank ) }
+      return result
+    end
 
 end
