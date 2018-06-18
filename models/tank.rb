@@ -77,4 +77,13 @@ class Tank
       return result
     end
 
+    def self.find( id )
+      sql = "SELECT * FROM tanks
+      WHERE id = $1"
+      values = [id]
+      tank = SqlRunner.run( sql, values )
+      result = Tank.new( tank.first )
+    return result
+end
+
 end
