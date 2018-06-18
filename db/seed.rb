@@ -34,7 +34,7 @@ customer1.save()
 rental1 = Rental.new({
   "customer_id" => customer1.id(),
   "tank_id" => tank2.id(),
-  "rental_status" => "true"
+  "rental_status" => true
   })
 
 rental1.save()

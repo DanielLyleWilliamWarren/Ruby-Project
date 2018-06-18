@@ -40,6 +40,29 @@ class Rental
     SqlRunner.run(sql)
   end
 
+  def customer()
+  sql = "SELECT *
+  FROM customers
+  WHERE id = $1"
+  values = [@customer_id]
+  customer = SqlRunner.run(sql, values).first
+  return Customer.new(customer)
+end
+
+def tank()
+  sql = "SELECT *
+  FROM tanks
+  WHERE id = $1"
+  values = [@tank_id]
+  tank = SqlRunner.run(sql, values).first
+  return Tank.new(tank)
+end
+
+def self.map_items(rental_data)
+  result = rental_data.map { |rental| Rental.new( rental ) }
+  return result
+end
+
   # def assign_tank()
   #   sql = 'SELECT name FROM tanks WHERE id = $1'
   #   values = [@tank_id]

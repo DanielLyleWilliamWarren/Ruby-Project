@@ -52,8 +52,9 @@ class Customer
 
   def tanks()
     sql = "SELECT tanks.* FROM tanks
-    INNER JOIN rentals ON
-    rentals.tank_id = tank.id WHERE customer_id = $1"
+      INNER JOIN rentals
+      ON rentals.tank_id = tanks.id
+      WHERE customer_id =$1"
     values = [@id]
     tank_data = SqlRunner.run( sql, values )
     return Tank.map_items(tank_data)

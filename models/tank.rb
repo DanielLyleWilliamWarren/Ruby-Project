@@ -53,9 +53,8 @@ class Tank
       SqlRunner.run( sql, values )
     end
 
-    def customers()
-      sql = "SELECT customers.*
-      FROM customers
+    def customer()
+      sql = "SELECT customers.* FROM customers
       INNER JOIN rentals
       ON rentals.customer_id = customers.id
       WHERE tank_id = $1"
