@@ -24,14 +24,14 @@ end
 #SHOW
 get '/tanks/:id' do
   @tank = Tank.find( params[:id] )
-  erb( :show )
+  erb( :"tanks/show" )
 end
 
 #CREATE
 post ('/tanks') do
   @tank = Tank.new(params)
   @tank.save()
-  erb( :create )
+  erb( :"tanks/create" )
 end
 
 # post ('/customers') do
