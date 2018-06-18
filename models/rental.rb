@@ -40,4 +40,11 @@ class Rental
     SqlRunner.run(sql)
   end
 
+  # def assign_tank()
+  #   sql = 'SELECT name FROM tanks WHERE id = $1'
+  #   values = [@tank_id]
+  #   tank = SqlRunner.run(sql, values)
+  #   return tank[0]["name"]
+  # end
+
 end
