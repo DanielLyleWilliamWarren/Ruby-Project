@@ -11,7 +11,7 @@ end
 
 #NEW
 get ('/customers/new') do
-  @customers = Customers.all()
+  @customers = Customer.all()
   erb( :"customers/new" )
 end
 
