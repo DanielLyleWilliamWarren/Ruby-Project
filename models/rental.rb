@@ -40,6 +40,13 @@ class Rental
     SqlRunner.run(sql)
   end
 
+  def delete()
+  sql = "DELETE FROM rentals
+  WHERE id = $1"
+  values = [@id]
+  SqlRunner.run( sql, values )
+end
+
   def customer()
   sql = "SELECT *
   FROM customers
