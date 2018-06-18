@@ -17,7 +17,8 @@ get ('/tanks/new') do
   @tanks = Tank.all()
   erb( :new )
 end
-# get ('/new-entry/new') do
+
+# get ('/tanks/new') do
 #   @customer = Customer.all()
 #   erb( :new )
 # end
@@ -32,8 +33,20 @@ end
 post ('/tanks') do
   @tank = Tank.new(params)
   @tank.save()
-  erb(  :create  )
+  erb( :create )
 end
+
+# post ('/customers') do
+#   @customer = Customer.new(params)
+#   @customer.save()
+#   erb( :create )
+
+#EDIT
+# get ('/tanks/:id/edit') do
+#   @tank = Tank.find(params[:id])
+#   erb( :edit )
+# end
+
 
 
 

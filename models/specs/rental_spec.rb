@@ -6,7 +6,7 @@ class TestRental< MiniTest::Test
   def setup
     options = { "tank_id" => "tank_id".to_i,
               "customer_id" => "customer_id".to_i,
-              "rental-status" => true}
+              "rental_status" => true}
 
     @rental = Rental.new(options)
 
@@ -24,7 +24,7 @@ end
 
 def test_rental_status
   result = @rental.rental_status()
-  assert_equal(nil, result)
+  assert_equal(true, result)
 end
 
 end

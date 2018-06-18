@@ -1,0 +1,12 @@
+<% for tank in @tanks %>
+  <p>Name: <%= tank.name() %> </p>
+  <p>Country of Origin: <%= tank.country_of_origin() %> </p>
+  <p>Price: <%= tank.price() %> </p>
+  <p><a href="/tanks/<%= tank.id %>">Show Tank</a></p>
+  <hr />
+  <% end %>
+
+  <% for customer in @customers  %>
+  <p>Name: <%= customer.name()  %></p>
+  <hr />
+  <% end %>
