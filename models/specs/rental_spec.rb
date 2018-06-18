@@ -5,20 +5,26 @@ class TestRental< MiniTest::Test
 
   def setup
     options = { "tank_id" => "tank_id".to_i,
-              "customer_id" => "customer_id".to_i}
+              "customer_id" => "customer_id".to_i,
+              "rental-status" => true}
 
     @rental = Rental.new(options)
 
   end
 
 def test_tank_id
-result = @rental.tank_id()
-assert_equal("tank_id".to_i, result)
+  result = @rental.tank_id()
+  assert_equal("tank_id".to_i, result)
 end
 
 def test_customer_id
-result = @rental.customer_id()
-assert_equal("customer_id".to_i, result)
+  result = @rental.customer_id()
+  assert_equal("customer_id".to_i, result)
+end
+
+def test_rental_status
+  result = @rental.rental_status()
+  assert_equal(nil, result)
 end
 
 end
