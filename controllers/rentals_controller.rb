@@ -15,12 +15,16 @@ end
 #NEW
 get ('/rentals/new') do
   @rentals = Rental.all()
+  @tanks = Tank.all()
+  @customers = Customer.all()
   erb( :"rentals/new" )
 end
 
 #SHOW
 get '/rentals/:id' do
   @rental = Rental.find( params[:id] )
+  @tank = Tank.find( params[:id] )
+  @customer = Customer.find( params[:id]  )
   erb( :"rentals/show" )
 end
 
