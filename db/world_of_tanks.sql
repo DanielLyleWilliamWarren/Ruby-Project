@@ -7,7 +7,8 @@ CREATE TABLE tanks (
   id serial4 PRIMARY KEY,
   name varchar(255),
   country_of_origin varchar(255),
-  price INT2
+  price INT2,
+  characteristic_id INT4 REFERENCES characteristics(id)
 );
 
 CREATE TABLE customers (

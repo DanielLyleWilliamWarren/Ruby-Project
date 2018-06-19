@@ -17,7 +17,8 @@ tank1 = Tank.new({
 tank2 = Tank.new({
   "name" => "IS",
   "country_of_origin" => "USSR",
-  "price" => "1000"
+  "price" => "1000",
+  "characteristic_id" => characteristic3.id()
   })
 
 tank3 = Tank.new({
