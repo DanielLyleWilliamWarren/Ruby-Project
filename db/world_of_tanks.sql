@@ -20,3 +20,5 @@ CREATE TABLE rentals (
   tank_id INT4 REFERENCES tanks(id),
   customer_id INT4 REFERENCES customers(id)
 );
+
+ 

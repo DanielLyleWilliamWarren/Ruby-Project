@@ -87,4 +87,11 @@ class Tank
     return result
 end
 
+def tank_avaliable
+  sql = "SELECT * FROM rentals WHERE (id = $1 AND rentals.rental_status = FALSE)"
+  values = [@id]
+  result = SqlRunner.run( sql, values )
+  return result.count == 0
+end
+
 end

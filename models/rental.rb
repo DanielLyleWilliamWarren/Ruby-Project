@@ -57,10 +57,20 @@ def customer()
 end
 
 def update()
-  sql = "UPDATE rentals SET rental_status = $1 WHERE id = $2"
-  values = [@rental_status, @id]
-  SqlRunner.run( sql, values )
+  @rental_status = false
+  sql = "UPDATE rentals SET rental_status = FALSE WHERE (id = $1 AND rental_status = TRUE)"
+  values = [@id]
+  result = SqlRunner.run( sql, values )
+  return result.count == 0
 end
+
+#
+# def update()
+#   @rental.rental_status = true
+#   sql = "UPDATE rentals.rental_status SET isFalse = CASE WHEN rental_status = TRUE THEN 1 ElSE 0"
+#   values = [@rental_status]
+#   SqlRunner.run( sql, values )
+# end
 
 def tank()
   sql = "SELECT *
