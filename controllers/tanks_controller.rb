@@ -10,8 +10,9 @@ get('/tanks') do
   erb( :"tanks/index" )
 end
 
-get('/tanks/tank_avaliable')
-  @tank = Tank.tank_avaliable()
+get('/tanks/:id/avaliable') do
+  tank = Tank.find(params[:id] )
+  @tank = Tank.avaliable()
   erb( :"tanks/index" )
 end
 #NEW
