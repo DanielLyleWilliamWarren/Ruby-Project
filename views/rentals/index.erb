@@ -1,7 +1,12 @@
-<% for rental in @rentals %>
-  <p>Tank: <%= rental.tank_id() %> </p>
-  <p>Customer: <%= rental.customer_id() %> </p>
-  <p>Status: <%= rental.rental_status() %> </p>
-  <p><a href="/rentals/<%= rental.id %>">Show Rental</a></p>
-  <hr />
-  <% end %>
+  <ul>
+    <% for rental in @rentals %>
+    <li>
+<p><%= rental.tank.name  %></p>
+    </li>
+    <li>
+      <p><%= rental.customer.name  %></p>
+    </li>
+    <p><a href="/rentals/<%= rental.id %>">Show Rental</a></p>
+    <% end  %>
+    <hr />
+  </ul>

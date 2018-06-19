@@ -5,7 +5,7 @@ class Rental
   attr_reader :id, :tank_id, :customer_id, :rental_status
 
   def initialize( options )
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @tank_id = options['tank_id'].to_i
     @customer_id = options['customer_id'].to_i
     @rental_status = options['rental_status']
@@ -74,6 +74,16 @@ end
 def self.map_items(rental_data)
   result = rental_data.map { |rental| Rental.new( rental ) }
   return result
+end
+
+def self.find( id )
+  sql = "SELECT * FROM rentals
+  WHERE id = $1"
+  values = [id]
+  rental = SqlRunner.run( sql, values )
+  result = Rental.new( rental.first )
+return result
+
 end
 
   # def assign_tank()

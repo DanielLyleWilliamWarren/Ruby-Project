@@ -9,6 +9,8 @@ also_reload( '../models/*')
 #INDEX
 get('/rentals') do
   @rentals = Rental.all()
+  @tanks = Tank.all()
+  @customers = Customer.all()
   erb( :"rentals/index" )
 end
 
@@ -23,8 +25,6 @@ end
 #SHOW
 get '/rentals/:id' do
   @rental = Rental.find( params[:id] )
-  @tank = Tank.find( params[:id] )
-  @customer = Customer.find( params[:id]  )
   erb( :"rentals/show" )
 end
 

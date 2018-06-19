@@ -5,7 +5,7 @@ class Tank
   attr_reader :name, :country_of_origin, :id, :price
 
   def initialize( options )
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @country_of_origin = options['country_of_origin']
     @price = options['price'].to_i
