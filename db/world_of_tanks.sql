@@ -1,4 +1,5 @@
 DROP TABLE rentals;
+DROP TABLE characteristics;
 DROP TABLE customers;
 DROP TABLE tanks;
 
@@ -12,6 +13,11 @@ CREATE TABLE tanks (
 CREATE TABLE customers (
   id serial4 PRIMARY KEY,
   name varchar(255)
+);
+
+CREATE TABLE characteristics (
+  id serial4 PRIMARY KEY,
+  class varchar(255)
 );
 
 CREATE TABLE rentals (
