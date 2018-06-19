@@ -48,8 +48,8 @@ post '/rentals/:id' do
   redirect to '/rentals'
 end
 #DELETE
-post '/rentals/:id/delete' do # delete
-  rental = Rental.find(params[:id] )
-  rental.delete()
+post '/rentals/:id/delete' do
+  @rental = Rental.find(params[:id] )
+  @rental.delete()
   redirect to '/rentals'
 end

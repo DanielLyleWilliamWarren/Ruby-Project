@@ -1,0 +1,11 @@
+<form method="post" action="/rentals/<%= @rental.id %>">
+  <label for="rental-status-field">Rental Status:</label>
+  <input
+  type="text"
+  name="rental_status"
+  id="rental-status-field"
+  value="<%= @rental.rental_status %>"
+  />
+
+  <input type='submit' value="Change Rental Status">
+</form>
