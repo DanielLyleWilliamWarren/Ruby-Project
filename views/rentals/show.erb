@@ -1,0 +1,7 @@
+<p>Customer: <%= @rental.tank_id %></p>
+<p>Tank: <%= @rental.customer_id %> </p>
+<p>Status: <%= @rental.rental_status %></p>
+
+<form method="delete" action="/rentals/<%= @rental.id %>/delete">
+  <input type="submit" value="End Rental"/>
+</form>

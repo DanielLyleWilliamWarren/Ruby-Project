@@ -1,0 +1,22 @@
+<h1>Add new rental</h1>
+<form action="/rentals" method="post">
+<label>
+Select a tank:
+<select name="tank_id">
+  <% for tank in @tanks %>
+  <option value="<%= tank.id %>"><%= tank.name %></option>
+  <% end %>
+</select>
+</label>
+
+<label>
+Select a customer:
+<select name="customer_id">
+<% for customer in @customers  %>
+<option value="<%= customer.id %>"><%= customer.name  %></option>
+<% end %>
+</select>
+</label>
+
+<input type="submit"name="" value="Add Rental">
+</form>
