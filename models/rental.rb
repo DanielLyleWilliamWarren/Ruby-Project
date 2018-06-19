@@ -8,7 +8,7 @@ class Rental
     @id = options['id'].to_i if options['id']
     @tank_id = options['tank_id'].to_i
     @customer_id = options['customer_id'].to_i
-    @rental_status = options['rental_status']
+    @rental_status = options['rental_status'] || true
   end
 
   def save()

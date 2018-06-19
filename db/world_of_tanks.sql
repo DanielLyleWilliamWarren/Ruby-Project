@@ -16,9 +16,7 @@ CREATE TABLE customers (
 
 CREATE TABLE rentals (
   id serial4 PRIMARY KEY,
-  rental_status BOOLEAN DEFAULT FALSE,
+  rental_status BOOLEAN DEFAULT TRUE,
   tank_id INT4 REFERENCES tanks(id),
   customer_id INT4 REFERENCES customers(id)
 );
-
- 

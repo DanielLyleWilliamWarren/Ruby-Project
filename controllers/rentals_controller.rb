@@ -43,10 +43,11 @@ end
 
 #UPDATE
 post '/rentals/:id' do
-  @rental = Rental.new(params)
+  @rental = Rental.find( params[:id] )
   @rental.update
   redirect to '/rentals'
 end
+
 #DELETE
 post '/rentals/:id/delete' do
   @rental = Rental.find(params[:id] )
