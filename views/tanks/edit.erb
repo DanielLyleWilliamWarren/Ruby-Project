@@ -1,0 +1,27 @@
+<form method="post" action="/tanks/<%= @tank.id %>">
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  value="<%= @tank.name %>"
+  />
+
+  <label for="country-of-origin">Country of Origin:</label>
+  <input
+  type="text"
+  name="country_of_origin"
+  id="country-of-origin-field"
+  value="<%= @tank.country_of_origin %>"
+  />
+
+  <label for="price-field">Price:</label>
+  <input
+  type="number"
+  name="price"
+  id="price-field"
+  value="<%= @tank.price() %>"
+  />
+
+  <input type='submit' value="Edit <%= @tank.name %>">
+</form>

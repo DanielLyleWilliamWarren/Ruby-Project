@@ -21,7 +21,7 @@ class Customer
       RETURNING *"
       values = [@name]
       customer_data = SqlRunner.run(sql, values)
-      @id =   customer_data.first()['id'].to_i
+      @id = customer_data.first()['id'].to_i
   end
 
   def self.all()
@@ -37,16 +37,8 @@ class Customer
   end
 
   def update()
-    sql = "UPDATE customer
-    SET
-    (
-    name
-    ) =
-    (
-    $1
-    )
-    WHERE id = $2"
-    values = [@name]
+    sql = "UPDATE customers SET name = $1 WHERE id = $2"
+    values = [@name, @id]
     SqlRunner.run( sql, values )
   end
 

@@ -1,3 +1,8 @@
 <p>Name: <%= @tank.name %></p>
 <p>Country of Origin: <%= @tank.country_of_origin %></p>
 <p>Price: <%= @tank.price %></p>
+<p><a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a></p>
+
+<form method="post" action="/tanks/<%= @tank.id %>/delete">
+  <input type="submit" value="Delete Tank"/>
+</form>

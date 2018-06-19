@@ -32,5 +32,18 @@ end
 #EDIT
 get ('/tanks/:id/edit') do
   @tank = Tank.find(params[:id])
-  erb( :edit )
+  erb( :"tanks/edit" )
+end
+
+#UPDATE
+post '/tanks/:id' do
+  @tank = Tank.new(params)
+  @tank.update
+  redirect to '/tanks'
+end
+#DELETE
+post '/tanks/:id/delete' do # delete
+  tank = Tank.find(params[:id] )
+  tank.delete()
+  redirect to '/tanks'
 end

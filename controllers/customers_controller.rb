@@ -27,3 +27,22 @@ post ('/customers') do
   @customer.save()
   erb( :"customers/create" )
 end
+
+#EDIT
+get ('/customers/:id/edit') do
+  @customer = Customer.find(params[:id])
+  erb( :"customers/edit" )
+end
+
+#UPDATE
+post '/customers/:id' do
+  @customer = Customer.new(params)
+  @customer.update
+  redirect to '/customers'
+end
+#DELETE
+post '/customers/:id/delete' do # delete
+  customer = Customer.find(params[:id] )
+  customer.delete()
+  redirect to '/customers'
+end

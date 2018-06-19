@@ -47,13 +47,19 @@ class Rental
   SqlRunner.run( sql, values )
 end
 
-  def customer()
+def customer()
   sql = "SELECT *
   FROM customers
   WHERE id = $1"
   values = [@customer_id]
   customer = SqlRunner.run(sql, values).first
   return Customer.new(customer)
+end
+
+def update()
+  sql = "UPDATE rentals SET rental_status = $1 WHERE id = $2"
+  values = [@rental_status, @id]
+  SqlRunner.run( sql, values )
 end
 
 def tank()

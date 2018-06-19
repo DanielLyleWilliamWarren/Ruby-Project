@@ -52,13 +52,14 @@ class Tank
       SET
       (
       name,
-      country_of_origin
+      country_of_origin,
+      price
       ) =
       (
       $1, $2, $3
       )
       WHERE id = $4"
-      values = [@name, @country_of_origin, @price]
+      values = [@name, @country_of_origin, @price, @id]
       SqlRunner.run( sql, values )
     end
 
