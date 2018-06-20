@@ -22,9 +22,9 @@ characteristic4.save()
 tank1 = Tank.new({
   "name" => "Tiger I",
   "country_of_origin" => "Germany",
-  "price" => "1200",
+  "price" => "1000",
   "characteristic_id" => characteristic3.id(),
-  "logo"
+  "logo" => "../public/Tiger_I.png"
   })
 
 tank2 = Tank.new({
@@ -32,6 +32,7 @@ tank2 = Tank.new({
   "country_of_origin" => "USSR",
   "price" => "1000",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/IS.png"
   })
 
 tank3 = Tank.new({
@@ -39,6 +40,7 @@ tank3 = Tank.new({
   "country_of_origin" => "USA",
   "price" => "1000",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/T29.png"
   })
 
 tank4 = Tank.new({
@@ -46,72 +48,84 @@ tank4 = Tank.new({
   "country_of_origin" => "Germany",
   "price" => "1500",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/Tiger_II.png"
   })
 tank5 = Tank.new({
-  "name" => "Jagdtiger",
+  "name" => "JagdTiger",
   "country_of_origin" => "Germany",
   "price" => "1800",
   "characteristic_id" => characteristic4.id()
+  "logo" => "../public/JagdTiger.png"
   })
 tank6 = Tank.new({
   "name" => "M18 Hellcat",
   "country_of_origin" => "USA",
   "price" => "650",
   "characteristic_id" => characteristic4.id()
+  "logo" => "../public/Hellcat.png"
   })
 tank7 = Tank.new({
   "name" => "M41 Bulldog",
   "country_of_origin" => "USA",
   "price" => "900",
   "characteristic_id" => characteristic1.id()
+  "logo" => "../public/Bulldog.png"
   })
 tank8 = Tank.new({
   "name" => "Cromwell",
   "country_of_origin" => "UK",
   "price" => "800",
   "characteristic_id" => characteristic2.id()
+  "logo" => "../public/Cromwell.png"
   })
 tank9 = Tank.new({
   "name" => "Churchill Mk V",
   "country_of_origin" => "UK",
   "price" => "550",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/Churchill_V.png"
   })
 tank10 = Tank.new({
   "name" => "Centurion Mk VII",
   "country_of_origin" => "UK",
   "price" => "550",
   "characteristic_id" => characteristic2.id()
+  "logo" => "../public/Centurion_Mk7.png"
   })
 tank11 = Tank.new({
   "name" => "AMX 13 90",
   "country_of_origin" => "France",
   "price" => "950",
   "characteristic_id" => characteristic1.id()
+  "logo" => "../public/AMX_13_90.png"
   })
 tank12 = Tank.new({
   "name" => "AMX 30t",
   "country_of_origin" => "France",
   "price" => "1250",
   "characteristic_id" => characteristic2.id()
+  "logo" => "../public/AMX_30.png"
   })
 tank13 = Tank.new({
   "name" => "AMX 50 120",
   "country_of_origin" => "France",
   "price" => "1300",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/AMX_50_120.png"
   })
 tank14 = Tank.new({
   "name" => "T-34",
   "country_of_origin" => "USSR",
   "price" => "550",
   "characteristic_id" => characteristic2.id()
+  "logo" => "../public/T-34.png"
   })
 tank15 = Tank.new({
   "name" => "T-54",
   "country_of_origin" => "USSR",
   "price" => "1250",
   "characteristic_id" => characteristic3.id()
+  "logo" => "../public/T-54.png"
   })
 
 tank1.save()

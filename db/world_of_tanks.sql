@@ -19,7 +19,8 @@ CREATE TABLE tanks (
   name varchar(255),
   country_of_origin varchar(255),
   price INT2,
-  characteristic_id INT4 REFERENCES characteristics(id) ON DELETE CASCADE
+  characteristic_id INT4 REFERENCES characteristics(id) ON DELETE CASCADE,
+  logo varchar(255)
 );
 
 CREATE TABLE rentals (
