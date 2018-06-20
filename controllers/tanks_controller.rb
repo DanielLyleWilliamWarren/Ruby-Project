@@ -10,6 +10,7 @@ get('/tanks') do
   erb( :"tanks/index" )
 end
 
+
 get('/tanks/:id/avaliable') do
   tank = Tank.find(params[:id] )
   @tank = Tank.avaliable()
@@ -21,6 +22,10 @@ get ('/tanks/new') do
   erb( :"tanks/new" )
 end
 
+get '/tanks/new' do
+  @characteristics = Characteristic.all
+  erb(:new)
+end
 #SHOW
 get '/tanks/:id' do
   @tank = Tank.find( params[:id] )

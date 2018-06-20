@@ -1,15 +1,8 @@
 DROP TABLE rentals;
+DROP TABLE tanks;
 DROP TABLE characteristics;
 DROP TABLE customers;
-DROP TABLE tanks;
 
-CREATE TABLE tanks (
-  id serial4 PRIMARY KEY,
-  name varchar(255),
-  country_of_origin varchar(255),
-  price INT2,
-  characteristic_id INT4 REFERENCES characteristics(id)
-);
 
 CREATE TABLE customers (
   id serial4 PRIMARY KEY,
@@ -21,6 +14,13 @@ CREATE TABLE characteristics (
   class varchar(255)
 );
 
+CREATE TABLE tanks (
+  id serial4 PRIMARY KEY,
+  name varchar(255),
+  country_of_origin varchar(255),
+  price INT2,
+  characteristic_id INT4 REFERENCES characteristics(id)
+);
 CREATE TABLE rentals (
   id serial4 PRIMARY KEY,
   rental_status BOOLEAN DEFAULT TRUE,

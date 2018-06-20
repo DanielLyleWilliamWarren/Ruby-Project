@@ -2,16 +2,28 @@ require( 'pry' )
 require_relative('../models/tank.rb')
 require_relative('../models/rental.rb')
 require_relative('../models/customer.rb')
+require_relative('../models/characteristic.rb')
 
 Rental.delete_all()
 Characteristic.delete_all()
 Tank.delete_all()
 Customer.delete_all()
 
+characteristic1 = Characteristic.new({'class' => 'light_tank'})
+characteristic2 = Characteristic.new({'class' => 'medium_tank'})
+characteristic3 = Characteristic.new({'class' => 'heavy_tank'})
+characteristic4 = Characteristic.new({'class' => 'tank_destroyer'})
+
+characteristic1.save()
+characteristic2.save()
+characteristic3.save()
+characteristic4.save()
+
 tank1 = Tank.new({
   "name" => "Tiger I",
   "country_of_origin" => "Germany",
-  "price" => "1200"
+  "price" => "1200",
+  "characteristic_id" => characteristic3.id()
   })
 
 tank2 = Tank.new({
@@ -24,21 +36,14 @@ tank2 = Tank.new({
 tank3 = Tank.new({
   "name" => "T29",
   "country_of_origin" => "USA",
-  "price" => "1000"
+  "price" => "1000",
+  "characteristic_id" => characteristic3.id()
   })
+
 tank1.save()
 tank2.save()
 tank3.save()
 
-characteristic1 = Characteristic.new({'class' => 'light_tank'})
-characteristic2 = Characteristic.new({'class' => 'medium_tank'})
-characteristic3 = Characteristic.new({'class' => 'heavy_tank'})
-characteristic4 = Characteristic.new({'class' => 'tank_destroyer'})
-
-characteristic1.save()
-characteristic2.save()
-characteristic3.save()
-characteristic4.save()
 
 customer1 = Customer.new({
   "name" => "Georgy Zhukov"

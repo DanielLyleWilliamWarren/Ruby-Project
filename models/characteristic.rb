@@ -25,6 +25,11 @@ class Characteristic
     @id = id.to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE from characteristics"
+    SqlRunner.run(sql)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM characteristics
     WHERE id = $1"
