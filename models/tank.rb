@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Tank
 
-  attr_reader :name, :country_of_origin, :id, :price, :characteristic
+  attr_accessor :name, :price, :characteristic_id, :country_of_origin
+  attr_reader :id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -95,6 +96,13 @@ end
     values = [@id]
     result = SqlRunner.run( sql, values )
   return result.count == 0
+end
+
+def class()
+  sql = 'SELECT class FROM characteristics WHERE id = $1'
+  values = [@characteristic_id]
+  characteristic = SqlRunner.run(sql, values)
+  return characteristic[0]["class"]
 end
 
 end

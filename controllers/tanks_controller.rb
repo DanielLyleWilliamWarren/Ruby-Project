@@ -18,7 +18,7 @@ end
 #NEW
 get ('/tanks/new') do
   @tanks = Tank.all()
-  @characteristics = Characteristic.all
+  @characteristics = Characteristic.all()
   erb( :"tanks/new" )
 end
 #SHOW
@@ -36,8 +36,8 @@ end
 
 #EDIT
 get ('/tanks/:id/edit') do
-  @characteristics = Characteristic.all
   @tank = Tank.find(params[:id])
+  @characteristics = Characteristic.all
   erb( :"tanks/edit" )
 end
 

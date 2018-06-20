@@ -1,6 +1,7 @@
 <% for tank in @tanks %>
   <p>Name: <%= tank.name() %> </p>
   <p>Country of Origin: <%= tank.country_of_origin() %> </p>
+  <p>Class: <%= tank.class() %></p>
   <p>Price: <%= tank.price() %> </p>
   <p><a href="/tanks/<%= tank.id %>">Show Tank</a></p>
   <form action="/tanks/<%tank.id%>/avaliable" method="post">
