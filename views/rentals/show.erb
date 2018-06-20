@@ -1,7 +1,7 @@
 <p>Customer: <%= @rental.tank_id %></p>
 <p>Tank: <%= @rental.customer_id %> </p>
 <p>Status: <%= @rental.rental_status %></p>
-<p><a href="/rentals/<%= @rental.id %>/edit">Change Status</a></p>
+
 
 <form action="/rentals/<%=@rental.id%>" method="post">
 <input type="submit" value="Change Status">

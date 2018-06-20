@@ -47,14 +47,18 @@ post '/tanks/:id' do
   @tank.update
   redirect to '/tanks'
 end
+
+#DELETE MESSAGE
+
+# get '/tanks/:id/watch' do
+#   @tank = Tank.find(params[:id])
+#   erb(:"tanks/no_tank")
+# end
+
 #DELETE
 post '/tanks/:id/delete' do
   tank = Tank.find(params[:id] )
-  tank.tank_avaliable.to_s
-  if tank.tank_avaliable
+  # tank.tank_avaliable.to_s
   tank.delete()
   redirect to '/tanks'
-else
-  erb( :"tanks/no_tank")
-end
 end

@@ -93,17 +93,6 @@ class Tank
 end
 
   def tank_avaliable()
-    # sql = "SELECT rental_status FROM rentals WHERE rentals.tank_id = $1"
-    # values = [@id]
-    # result = SqlRunner.run( sql, values ).first
-    # return false if result == nil
-    # returned_result = result["returned"]
-    #   if returned_result == "f"
-    #     return true
-    #       else
-    #         return false
-    #   end
-
     sql = "SELECT COUNT(tank_id) FROM rentals WHERE tank_id = $1"
     values = [@id]
     result = SqlRunner.run( sql, values ).first

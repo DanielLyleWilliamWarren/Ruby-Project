@@ -21,9 +21,10 @@ CREATE TABLE tanks (
   price INT2,
   characteristic_id INT4 REFERENCES characteristics(id) ON DELETE CASCADE
 );
+
 CREATE TABLE rentals (
   id serial4 PRIMARY KEY,
   rental_status BOOLEAN DEFAULT TRUE,
-  tank_id INT4 REFERENCES tanks(id),
-  customer_id INT4 REFERENCES customers(id)
+  tank_id INT4 REFERENCES tanks(id) ON DELETE CASCADE,
+  customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE
 );

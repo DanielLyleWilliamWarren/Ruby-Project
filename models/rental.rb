@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Rental
 
-  attr_reader :id, :tank_id, :customer_id, :rental_status
+  attr_reader :id, :tank_id, :customer_id
+  attr_accessor :rental_status
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
