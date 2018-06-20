@@ -50,6 +50,11 @@ end
 #DELETE
 post '/tanks/:id/delete' do
   tank = Tank.find(params[:id] )
+  tank.tank_avaliable.to_s
+  if tank.tank_avaliable
   tank.delete()
   redirect to '/tanks'
+else
+  erb( :"tanks/no_tank")
+end
 end

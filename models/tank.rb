@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require( 'pry')
 
 class Tank
 
@@ -92,16 +93,22 @@ class Tank
 end
 
   def tank_avaliable()
-    sql = "SELECT rental_status FROM rentals WHERE rentals.tank_id = $1"
+    # sql = "SELECT rental_status FROM rentals WHERE rentals.tank_id = $1"
+    # values = [@id]
+    # result = SqlRunner.run( sql, values ).first
+    # return false if result == nil
+    # returned_result = result["returned"]
+    #   if returned_result == "f"
+    #     return true
+    #       else
+    #         return false
+    #   end
+
+    sql = "SELECT COUNT(tank_id) FROM rentals WHERE tank_id = $1"
     values = [@id]
     result = SqlRunner.run( sql, values ).first
-  return false if result == nil
-  returned_result = result["returned"]
-  if returned_result = "f"
-    return true
-  else return false
+    return result["count"] == '0'
   end
-end
 
 def class()
   sql = 'SELECT class FROM characteristics WHERE id = $1'
