@@ -91,11 +91,16 @@ class Tank
     return result
 end
 
-  def self.tank_avaliable
-    sql = "SELECT * FROM rentals WHERE (id = $1 AND rentals.rental_status = FALSE)"
+  def tank_avaliable()
+    sql = "SELECT rental_status FROM rentals WHERE rentals.tank_id = $1"
     values = [@id]
-    result = SqlRunner.run( sql, values )
-  return result.count == 0
+    result = SqlRunner.run( sql, values ).first
+  return false if result == nil
+  returned_result = result["returned"]
+  if returned_result = "f"
+    return true
+  else return false
+  end
 end
 
 def class()
