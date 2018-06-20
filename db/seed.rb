@@ -9,10 +9,10 @@ Characteristic.delete_all()
 Tank.delete_all()
 Customer.delete_all()
 
-characteristic1 = Characteristic.new({'class' => 'light_tank'})
-characteristic2 = Characteristic.new({'class' => 'medium_tank'})
-characteristic3 = Characteristic.new({'class' => 'heavy_tank'})
-characteristic4 = Characteristic.new({'class' => 'tank_destroyer'})
+characteristic1 = Characteristic.new({'class' => 'Light Tank'})
+characteristic2 = Characteristic.new({'class' => 'Medium Tank'})
+characteristic3 = Characteristic.new({'class' => 'Heavy Tank'})
+characteristic4 = Characteristic.new({'class' => 'Tank Destroyer'})
 
 characteristic1.save()
 characteristic2.save()
@@ -23,7 +23,8 @@ tank1 = Tank.new({
   "name" => "Tiger I",
   "country_of_origin" => "Germany",
   "price" => "1200",
-  "characteristic_id" => characteristic3.id()
+  "characteristic_id" => characteristic3.id(),
+  "logo"
   })
 
 tank2 = Tank.new({
@@ -132,8 +133,24 @@ tank15.save()
 customer1 = Customer.new({
   "name" => "Georgy Zhukov"
   })
+customer2 = Customer.new({
+  "name" => "Bernard Montgomery"
+  })
+customer3 = Customer.new({
+  "name" => "Erwin Rommel"
+  })
+customer4 = Customer.new({
+  "name" => "Charles de Galle"
+  })
+customer5 = Customer.new({
+  "name" => "George Patton"
+  })
 
 customer1.save()
+customer2.save()
+customer3.save()
+customer4.save()
+customer5.save()
 
 rental1 = Rental.new({
   "customer_id" => customer1.id(),
