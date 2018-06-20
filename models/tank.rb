@@ -3,7 +3,7 @@ require( 'pry')
 
 class Tank
 
-  attr_accessor :name, :price, :characteristic_id, :country_of_origin
+  attr_accessor :name, :price, :characteristic_id, :country_of_origin, :logo
   attr_reader :id
 
   def initialize( options )
@@ -12,6 +12,7 @@ class Tank
     @country_of_origin = options['country_of_origin']
     @price = options['price'].to_i
     @characteristic_id = options['characteristic_id'].to_i
+    @logo = options['logo']
   end
 
   def save()
@@ -20,14 +21,15 @@ class Tank
         name,
         country_of_origin,
         price,
-        characteristic_id
+        characteristic_id,
+        logo
       )
       VALUES
       (
-        $1, $2, $3, $4
+        $1, $2, $3, $4, $5
       )
       RETURNING *"
-      values = [@name, @country_of_origin, @price, @characteristic_id]
+      values = [@name, @country_of_origin, @price, @characteristic_id, @logo]
       tank_data = SqlRunner.run(sql, values)
       @id =   tank_data.first()['id'].to_i
     end
@@ -58,13 +60,14 @@ class Tank
       name,
       country_of_origin,
       price,
-      characteristic_id
+      characteristic_id,
+      logo
       ) =
       (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-      values = [@name, @country_of_origin, @price, @characteristic_id, @id]
+      WHERE id = $6"
+      values = [@name, @country_of_origin, @price, @characteristic_id, @id, @logo]
       SqlRunner.run( sql, values )
     end
 
