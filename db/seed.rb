@@ -40,10 +40,94 @@ tank3 = Tank.new({
   "characteristic_id" => characteristic3.id()
   })
 
+tank4 = Tank.new({
+  "name" => "Tiger II",
+  "country_of_origin" => "Germany",
+  "price" => "1500",
+  "characteristic_id" => characteristic3.id()
+  })
+tank5 = Tank.new({
+  "name" => "Jagdtiger",
+  "country_of_origin" => "Germany",
+  "price" => "1800",
+  "characteristic_id" => characteristic4.id()
+  })
+tank6 = Tank.new({
+  "name" => "M18 Hellcat",
+  "country_of_origin" => "USA",
+  "price" => "650",
+  "characteristic_id" => characteristic4.id()
+  })
+tank7 = Tank.new({
+  "name" => "M41 Bulldog",
+  "country_of_origin" => "USA",
+  "price" => "900",
+  "characteristic_id" => characteristic1.id()
+  })
+tank8 = Tank.new({
+  "name" => "Cromwell",
+  "country_of_origin" => "UK",
+  "price" => "800",
+  "characteristic_id" => characteristic2.id()
+  })
+tank9 = Tank.new({
+  "name" => "Churchill Mk V",
+  "country_of_origin" => "UK",
+  "price" => "550",
+  "characteristic_id" => characteristic3.id()
+  })
+tank10 = Tank.new({
+  "name" => "Centurion Mk VII",
+  "country_of_origin" => "UK",
+  "price" => "550",
+  "characteristic_id" => characteristic2.id()
+  })
+tank11 = Tank.new({
+  "name" => "AMX 13 90",
+  "country_of_origin" => "France",
+  "price" => "950",
+  "characteristic_id" => characteristic1.id()
+  })
+tank12 = Tank.new({
+  "name" => "AMX 30t",
+  "country_of_origin" => "France",
+  "price" => "1250",
+  "characteristic_id" => characteristic2.id()
+  })
+tank13 = Tank.new({
+  "name" => "AMX 50 120",
+  "country_of_origin" => "France",
+  "price" => "1300",
+  "characteristic_id" => characteristic3.id()
+  })
+tank14 = Tank.new({
+  "name" => "T-34",
+  "country_of_origin" => "USSR",
+  "price" => "550",
+  "characteristic_id" => characteristic2.id()
+  })
+tank15 = Tank.new({
+  "name" => "T-54",
+  "country_of_origin" => "USSR",
+  "price" => "1250",
+  "characteristic_id" => characteristic3.id()
+  })
+
 tank1.save()
 tank2.save()
 tank3.save()
-
+tank4.save()
+tank5.save()
+tank6.save()
+tank7.save()
+tank8.save()
+tank9.save()
+tank10.save()
+tank11.save()
+tank12.save()
+tank13.save()
+tank14.save()
+tank15.save()
 
 customer1 = Customer.new({
   "name" => "Georgy Zhukov"
