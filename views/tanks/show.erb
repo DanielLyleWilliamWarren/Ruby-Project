@@ -2,7 +2,7 @@
 <p>Country of Origin: <%= @tank.country_of_origin %></p>
 <p>Class: <%= @tank.class() %></p>
 <p>Price: <%= @tank.price %></p>
-<p>Img: <%= @tank.logo  %></p>
+<p><img src="<%= @tank.logo  %>"></p>
 <p><a href="/tanks/<%= @tank.id %>/edit">Edit Tank</a></p>
 
 <form method="post" action="/tanks/<%= @tank.id %>/delete">

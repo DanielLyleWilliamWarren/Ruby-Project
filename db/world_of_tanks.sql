@@ -6,7 +6,7 @@ DROP TABLE customers;
 
 CREATE TABLE customers (
   id serial4 PRIMARY KEY,
-  name varchar(255)
+  name varchar(255),
 );
 
 CREATE TABLE characteristics (
