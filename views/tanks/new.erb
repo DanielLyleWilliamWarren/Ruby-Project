@@ -5,6 +5,13 @@
   <label for="country-of-origin">Country of Origin:</label>
   <input id="country-of-origin" type="text" name="country_of_origin"/>
 
+  <label for="characteristic-select">Select Class:</label>
+  <select name="characteristic_id" id="characteristic_select">
+  <% @characteristics.each do |characteristic| %>
+  <option value=<%= characteristic.id %>><%= characteristic.class.capitalize %></option>
+  <% end %>
+  </select>
+
   <label for="price">Price:</label>
   <input id="price" type="number" name="price"/>
 

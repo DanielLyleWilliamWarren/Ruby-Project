@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/tank.rb')
+require_relative( '../models/characteristic.rb')
 also_reload( '../models/*')
 
 #INDEX
@@ -9,22 +10,16 @@ get('/tanks') do
   @tanks = Tank.all()
   erb( :"tanks/index" )
 end
-
-
-get('/tanks/:id/avaliable') do
-  tank = Tank.find(params[:id] )
-  @tank = Tank.avaliable()
-  erb( :"tanks/index" )
-end
+# get('/tanks/:id/avaliable') do
+#   tank = Tank.find(params[:id] )
+#   @tank = Tank.avaliable()
+#   erb( :"tanks/index" )
+# end
 #NEW
 get ('/tanks/new') do
   @tanks = Tank.all()
-  erb( :"tanks/new" )
-end
-
-get '/tanks/new' do
   @characteristics = Characteristic.all
-  erb(:new)
+  erb( :"tanks/new" )
 end
 #SHOW
 get '/tanks/:id' do
@@ -41,6 +36,7 @@ end
 
 #EDIT
 get ('/tanks/:id/edit') do
+  @characteristics = Characteristic.all
   @tank = Tank.find(params[:id])
   erb( :"tanks/edit" )
 end
@@ -52,7 +48,7 @@ post '/tanks/:id' do
   redirect to '/tanks'
 end
 #DELETE
-post '/tanks/:id/delete' do # delete
+post '/tanks/:id/delete' do
   tank = Tank.find(params[:id] )
   tank.delete()
   redirect to '/tanks'

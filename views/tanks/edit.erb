@@ -15,6 +15,17 @@
   value="<%= @tank.country_of_origin %>"
   />
 
+  <label for="characteristic_select">Select Class:</label>
+  <select name="characteristic_id" id="characteristic_select" selected="<%= @tank.characteristic_id  %>">
+  <% @characteristics.each do |characteristic| %>
+  <% if characteristic.id == @tank.characteristic_id %>
+  <option value=<%= characteristic.id %> selected><%= characteristic.class.capitalize %></option>
+  <% else %>
+  <option value=<%= characteristic.id %>><%= characteristic.class.capitalize %></option>
+  <% end %>
+  <% end %>
+  </select>
+
   <label for="price-field">Price:</label>
   <input
   type="number"
